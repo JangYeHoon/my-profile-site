@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>장예훈 — Cloud Engineer</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#a855f7',
+            'primary-light': '#c084fc',
+            'primary-dark': '#7e22ce',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body style="background:#0a0a0a; color:#f5f5f5; font-family:'Inter',sans-serif;" class="overflow-x-hidden">
+
+  <!-- ============ NAVBAR ============ -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10 py-5 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="text-base font-semibold text-white flex items-center gap-2">
+        <svg class="w-5 h-5 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+        </svg>
+        장예훈.dev
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-10 text-sm text-gray-400">
+        <a href="#hero" class="hover:text-white transition-colors">Home</a>
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden text-gray-400 hover:text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/10" style="background:#0f0f0f;">
+      <div class="px-6 py-4 flex flex-col gap-4 text-sm text-gray-400">
+        <a href="#hero" class="hover:text-white">Home</a>
+        <a href="#about" class="hover:text-white">About</a>
+        <a href="#projects" class="hover:text-white">Projects</a>
+        <a href="#contact" class="hover:text-white">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+    <!-- BG Glows -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-0 right-0 w-[700px] h-[700px] rounded-full opacity-20" style="background:radial-gradient(circle, #7e22ce 0%, transparent 70%); transform:translate(20%, -20%);"></div>
+      <div class="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full opacity-15" style="background:radial-gradient(circle, #dc2626 0%, transparent 70%); transform:translate(-20%, 20%);"></div>
+      <div class="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] rounded-full opacity-10" style="background:radial-gradient(circle, #0d9488 0%, transparent 70%);"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 lg:px-10 pt-28 pb-20 w-full fade-in">
+      <!-- Avatar + Name -->
+      <div class="flex items-center gap-5 mb-6">
+        <div class="w-16 h-16 rounded-full border-2 border-purple-500/50 flex items-center justify-center text-xl font-bold flex-shrink-0" style="background:linear-gradient(135deg,#1e1e2e,#2d1b4e);">
+          YH
+        </div>
+        <div>
+          <div class="text-sm text-gray-500 mb-1">Cloud Engineer · Platform Engineer</div>
+          <div class="flex items-center gap-2 text-sm text-gray-400">
+            <span class="w-2 h-2 rounded-full bg-green-500 inline-block"></span>
+            Available for opportunities
+          </div>
+        </div>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
+        Hey, I'm <span style="color:#a855f7;">장예훈</span>✨<br>
+        A <span style="background:linear-gradient(90deg,#a855f7,#6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">
+          <span id="typing-text">Cloud Engineer</span>
+        </span><span class="blink" style="-webkit-text-fill-color:#a855f7; color:#a855f7;">|</span>
+      </h1>
+
+      <!-- Bio -->
+      <p class="text-gray-400 text-lg max-w-xl mb-8 leading-relaxed">
+        AWS, Azure, OpenStack의 클라우드 플랫폼을 관리하고 운영하는
+        <strong class="text-gray-200">플랫폼 엔지니어</strong>입니다.
+        인프라 자동화와 성능 최적화에 집중합니다.
+      </p>
+
+      <!-- CTA Buttons + Social Icons -->
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="#contact" class="flex items-center gap-2 px-5 py-2.5 border border-white/20 rounded-md text-sm font-medium hover:border-white/40 hover:bg-white/5 transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          Contact Me
+        </a>
+        <a href="#projects" class="flex items-center gap-2 px-5 py-2.5 border border-white/20 rounded-md text-sm font-medium hover:border-white/40 hover:bg-white/5 transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          View Projects
+        </a>
+
+        <div class="w-px h-6 bg-white/10 mx-1"></div>
+
+        <!-- Social Icons -->
+        <a href="mailto:jkjk128jkjk@hanmail.net" class="text-gray-500 hover:text-white transition-colors" title="Email">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </a>
+        <a href="#" class="text-gray-500 hover:text-white transition-colors" title="GitHub">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+        </a>
+        <a href="#" class="text-gray-500 hover:text-white transition-colors" title="LinkedIn">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT / WHAT I DO ============ -->
+  <section id="about" class="py-24 px-6 lg:px-10 border-t border-white/5">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-12 fade-in-scroll">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-3">Cloud Infrastructure Engineering</h2>
+        <p class="text-gray-500 text-base max-w-xl">다중 클라우드 플랫폼을 운영하며 안정적이고 확장 가능한 인프라를 구축합니다.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-4 mb-8">
+        <!-- Card 1 -->
+        <div class="border border-white/8 rounded-xl p-6 fade-in-scroll card-hover" style="background:#111111;">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:#1a0a2e;">
+              <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+            </div>
+            <h3 class="font-semibold text-white">Cloud Platforms</h3>
+          </div>
+          <p class="text-gray-500 text-sm mb-4">다중 클라우드 플랫폼을 운영하여 비즈니스 요구에 맞는 최적의 인프라를 제공합니다.</p>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span>AWS 멀티 리전 아키텍처</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span>Azure 하이브리드 클라우드</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span>OpenStack 프라이빗 클라우드</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span>클라우드 비용 최적화</li>
+          </ul>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="border border-white/8 rounded-xl p-6 fade-in-scroll card-hover" style="background:#111111;">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:#0a1a0a;">
+              <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            </div>
+            <h3 class="font-semibold text-white">Automation & DevOps</h3>
+          </div>
+          <p class="text-gray-500 text-sm mb-4">Python과 Shell 스크립트로 인프라를 코드화하여 반복 작업을 자동화합니다.</p>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-400 flex-shrink-0"></span>Python 자동화 스크립트</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-400 flex-shrink-0"></span>Shell 스크립팅</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-400 flex-shrink-0"></span>CI/CD 파이프라인</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-green-400 flex-shrink-0"></span>인프라 모니터링</li>
+          </ul>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="border border-white/8 rounded-xl p-6 fade-in-scroll card-hover" style="background:#111111;">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:#0a0a1a;">
+              <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <h3 class="font-semibold text-white">Security & Networking</h3>
+          </div>
+          <p class="text-gray-500 text-sm mb-4">클라우드 네트워킹과 보안 아키텍처를 설계하고 운영합니다.</p>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span>VPC 네트워크 설계</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span>보안 그룹 및 IAM</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span>VPN / ExpressRoute</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span>컴플라이언스 관리</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex justify-end fade-in-scroll">
+        <a href="#projects" class="flex items-center gap-2 px-5 py-2.5 border border-white/15 rounded-md text-sm text-gray-400 hover:text-white hover:border-white/30 transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          View My Projects
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills" class="py-24 px-6 lg:px-10 border-t border-white/5">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-12 fade-in-scroll">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-3">Tech Stack</h2>
+        <p class="text-gray-500 text-base">다루는 기술들과 숙련도입니다.</p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 fade-in-scroll">
+        <div class="border border-white/8 rounded-xl p-5 text-center card-hover" style="background:#111111;">
+          <div class="text-2xl mb-3">🐍</div>
+          <div class="font-semibold text-sm mb-3">Python</div>
+          <div class="w-full h-1.5 rounded-full overflow-hidden" style="background:#1f1f1f;">
+            <div class="h-full rounded-full skill-bar" style="width:0%; background:linear-gradient(90deg,#a855f7,#7c3aed);"></div>
+          </div>
+          <div class="text-xs text-gray-600 mt-2">Advanced</div>
+        </div>
+
+        <div class="border border-white/8 rounded-xl p-5 text-center card-hover" style="background:#111111;">
+          <div class="text-2xl mb-3">☁️</div>
+          <div class="font-semibold text-sm mb-3">AWS</div>
+          <div class="w-full h-1.5 rounded-full overflow-hidden" style="background:#1f1f1f;">
+            <div class="h-full rounded-full skill-bar" style="width:0%; background:linear-gradient(90deg,#f97316,#ea580c);"></div>
+          </div>
+          <div class="text-xs text-gray-600 mt-2">Expert</div>
+        </div>
+
+        <div class="border border-white/8 rounded-xl p-5 text-center card-hover" style="background:#111111;">
+          <div class="text-2xl mb-3">🔷</div>
+          <div class="font-semibold text-sm mb-3">Azure</div>
+          <div class="w-full h-1.5 rounded-full overflow-hidden" style="background:#1f1f1f;">
+            <div class="h-full rounded-full skill-bar" style="width:0%; background:linear-gradient(90deg,#3b82f6,#2563eb);"></div>
+          </div>
+          <div class="text-xs text-gray-600 mt-2">Advanced</div>
+        </div>
+
+        <div class="border border-white/8 rounded-xl p-5 text-center card-hover" style="background:#111111;">
+          <div class="text-2xl mb-3">📦</div>
+          <div class="font-semibold text-sm mb-3">OpenStack</div>
+          <div class="w-full h-1.5 rounded-full overflow-hidden" style="background:#1f1f1f;">
+            <div class="h-full rounded-full skill-bar" style="width:0%; background:linear-gradient(90deg,#22c55e,#16a34a);"></div>
+          </div>
+          <div class="text-xs text-gray-600 mt-2">Expert</div>
+        </div>
+
+        <div class="border border-white/8 rounded-xl p-5 text-center card-hover" style="background:#111111;">
+          <div class="text-2xl mb-3">⚙️</div>
+          <div class="font-semibold text-sm mb-3">Shell</div>
+          <div class="w-full h-1.5 rounded-full overflow-hidden" style="background:#1f1f1f;">
+            <div class="h-full rounded-full skill-bar" style="width:0%; background:linear-gradient(90deg,#6ee7b7,#059669);"></div>
+          </div>
+          <div class="text-xs text-gray-600 mt-2">Advanced</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="py-24 px-6 lg:px-10 border-t border-white/5">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-12 fade-in-scroll">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-3">Featured Projects</h2>
+        <p class="text-gray-500 text-base">클라우드 인프라 엔지니어링 프로젝트들입니다.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 fade-in-scroll">
+        <!-- Project 1 -->
+        <div class="border border-white/8 rounded-xl overflow-hidden card-hover group" style="background:#111111;" data-status="placeholder">
+          <div class="h-1.5" style="background:linear-gradient(90deg,#3b82f6,#6366f1);"></div>
+          <div class="p-6">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:#0a0f1f;">
+              <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+            </div>
+            <h3 class="font-bold text-white mb-2">Multi-Region AWS Infrastructure</h3>
+            <p class="text-gray-500 text-sm mb-4 leading-relaxed">3개 AWS 리전에 걸쳐 Terraform과 Auto Scaling Group을 사용한 고가용성 VPC 아키텍처를 설계 및 배포했습니다.</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="px-2.5 py-1 text-xs rounded-md font-medium" style="background:#0a0f1f; color:#60a5fa; border:1px solid #1e3a5f;">AWS</span>
+              <span class="px-2.5 py-1 text-xs rounded-md font-medium" style="background:#0a0f1f; color:#60a5fa; border:1px solid #1e3a5f;">Terraform</span>
+              <span class="px-2.5 py-1 text-xs rounded-md font-medium" style="background:#0a0f1f; color:#60a5fa; border:1px solid #1e3a5f;">VPC</span>
+              <span class="px-2.5 py-1 text-xs rounded-md font-medium" style="background:#0a0f1f; color:#60a5fa; border:1px solid #1e3a5f;">EC2</span>
+            </div>
+            <button class="w-full py-2 rounded-lg text-sm font-medium transition-all border border-white/10 text-gray-400 hover:border-blue-500/50 hover:text-blue-400">
+              View Details →
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="border border-white/8 rounded-xl overflow-hidden card-hover group" style="background:#111111;" data-status="placeholder">
+          <div class="h-1.5" style="background:linear-gradient(90deg,#22c55e,#10b981);"></div>
+          <div class="p-6">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:#061a0e;">
+              <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
+            </div>
+            <h3 class="font-bold text-white mb-2">OpenStack Private Cloud Setup</h3>
+            <p class="text-gray-500 text-sm mb-4 leading-relaxed">OpenStack으로 온프레미스 프라이빗 클라우드를 구축하고 Python 스크립트로 테넌트 프로비저닝을 자동화했습니다.</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="px-2.5 py-1 text-xs rounded-md font-medium" style="background:#061a0e; color:#4ade80; border:1px solid #14532d;">OpenStack</span>
+              <span class="px-2.5 py-1 text-xs rounded-md font-medium" style="background:#061a0e; color:#4ade80; border:1px solid #14532d;">Python</span>
+              <span class="px-2.5 py-1 text-xs rounded-md font-medium" style="background:#061a0e; color:#4ade80; border:1px solid #14532d;">Shell</span>
+              <span class="px-2.5 py-1 text-xs rounded-md font-medium" style="background:#061a0e; color:#4ade80; border:1px solid #14532d;">Networking</span>
+            </div>
+            <button class="w-full py-2 rounded-lg text-sm font-medium transition-all border border-white/10 text-gray-400 hover:border-green-500/50 hover:text-green-400">
+              View Details →
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="border border-white/8 rounded-xl overflow-hidden card-hover group" style="background:#111111;" data-status="placeholder">
+          <div class="h-1.5" style="background:linear-gradient(90deg,#a855f7,#7c3aed);"></div>
+          <div class="p-6">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center mb-4" style="background:#1a0a2e;">
+              <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="font-bold text-white mb-2">Azure Hybrid Connectivity Pipeline</h3>
+            <p class="text-gray-500 text-sm mb-4 leading-relaxed">Azure ExpressRoute와 VPN Gateway를 구성하여 온프레미스 워크로드와 Azure 서비스 간 하이브리드 연결을 구축했습니다.</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="px-2.5 py-1 text-xs rounded-md font-medium" style="background:#1a0a2e; color:#c084fc; border:1px solid #3b1a6e;">Azure</span>
+              <span class="px-2.5 py-1 text-xs rounded-md font-medium" style="background:#1a0a2e; color:#c084fc; border:1px solid #3b1a6e;">VPN</span>
+              <span class="px-2.5 py-1 text-xs rounded-md font-medium" style="background:#1a0a2e; color:#c084fc; border:1px solid #3b1a6e;">Networking</span>
+              <span class="px-2.5 py-1 text-xs rounded-md font-medium" style="background:#1a0a2e; color:#c084fc; border:1px solid #3b1a6e;">Shell</span>
+            </div>
+            <button class="w-full py-2 rounded-lg text-sm font-medium transition-all border border-white/10 text-gray-400 hover:border-purple-500/50 hover:text-purple-400">
+              View Details →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="py-24 px-6 lg:px-10 border-t border-white/5">
+    <div class="max-w-6xl mx-auto">
+      <!-- Full-width card like screenshot -->
+      <div class="relative rounded-2xl overflow-hidden border border-white/8 fade-in-scroll" style="background:#0f0f0f;">
+        <!-- BG mesh decoration -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden">
+          <div class="absolute bottom-0 left-0 w-96 h-96 opacity-20" style="background:radial-gradient(circle, #7e22ce 0%, transparent 60%); transform:translate(-30%, 30%);"></div>
+          <div class="absolute top-0 right-0 w-64 h-64 opacity-10" style="background:radial-gradient(circle, #0d9488 0%, transparent 60%); transform:translate(20%, -20%);"></div>
+          <!-- Wave/grid pattern -->
+          <svg class="absolute bottom-0 left-0 opacity-10 w-full" viewBox="0 0 800 200" preserveAspectRatio="none">
+            <path d="M0,100 C150,50 350,150 500,100 C650,50 750,120 800,100 L800,200 L0,200 Z" fill="url(#waveGrad)" opacity="0.5"/>
+            <defs>
+              <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <div class="relative grid md:grid-cols-2 gap-0">
+          <!-- Left: Headline -->
+          <div class="p-10 lg:p-14 flex flex-col justify-center">
+            <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight mb-4" style="background:linear-gradient(135deg,#a855f7,#6366f1,#3b82f6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">
+              아이디어를 현실로.<br>
+              함께 만들어봐요.
+            </h2>
+            <p class="text-gray-500 text-sm mb-6">클라우드 인프라나 협업에 관심 있으시면 편하게 연락주세요!</p>
+            <a href="mailto:jkjk128jkjk@hanmail.net" class="inline-flex items-center gap-2 text-sm text-purple-400 hover:text-purple-300 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              jkjk128jkjk@hanmail.net
+            </a>
+          </div>
+
+          <!-- Right: Form -->
+          <div class="p-8 lg:p-12 border-t md:border-t-0 md:border-l border-white/8">
+            <form id="contact-form" class="space-y-4">
+              <div>
+                <label class="block text-xs text-gray-500 mb-1.5">Name</label>
+                <input type="text" placeholder="Your Name" required class="w-full px-3 py-2.5 rounded-lg text-sm text-white placeholder-gray-600 border border-white/10 focus:border-purple-500/60 focus:outline-none transition-colors" style="background:#1a1a1a;">
+              </div>
+              <div>
+                <label class="block text-xs text-gray-500 mb-1.5">Email</label>
+                <input type="email" placeholder="contact@example.com" required class="w-full px-3 py-2.5 rounded-lg text-sm text-white placeholder-gray-600 border border-white/10 focus:border-purple-500/60 focus:outline-none transition-colors" style="background:#1a1a1a;">
+              </div>
+              <div>
+                <label class="block text-xs text-gray-500 mb-1.5">Message</label>
+                <textarea placeholder="Your message here..." rows="5" required class="w-full px-3 py-2.5 rounded-lg text-sm text-white placeholder-gray-600 border border-white/10 focus:border-purple-500/60 focus:outline-none transition-colors resize-none" style="background:#1a1a1a;"></textarea>
+              </div>
+              <div class="flex justify-end">
+                <button type="submit" class="px-6 py-2.5 rounded-lg text-sm font-medium text-white transition-all hover:opacity-90" style="background:linear-gradient(135deg,#7c3aed,#4f46e5);">
+                  Send →
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="py-8 px-6 lg:px-10 border-t border-white/5">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div>
+        <div class="font-semibold text-white mb-1">장예훈</div>
+        <div class="text-xs text-gray-600">© 2026 Jang Ye-hun. All rights reserved.</div>
+      </div>
+      <div class="flex items-center gap-4 text-gray-600">
+        <a href="mailto:jkjk128jkjk@hanmail.net" class="hover:text-white transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </a>
+        <a href="#" class="hover:text-white transition-colors">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+        </a>
+        <a href="#" class="hover:text-white transition-colors">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
